@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
     user_id: DataTypes.INTEGER,
     specialty_id: DataTypes.INTEGER,
     collegiate_number: DataTypes.STRING,
-    schedule: DataTypes.ENUM
+    schedule: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Employee',

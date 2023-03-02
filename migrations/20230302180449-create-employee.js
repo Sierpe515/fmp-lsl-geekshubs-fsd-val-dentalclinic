@@ -28,7 +28,7 @@ module.exports = {
         unique: true,
       },
       schedule: {
-        type: Sequelize.ENUM(['morning', 'afternoon'])
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
