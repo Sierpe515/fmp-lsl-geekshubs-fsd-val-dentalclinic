@@ -12,6 +12,27 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      surname: {
+        type: Sequelize.STRING
+      },
+      nif: {
+        type: Sequelize.STRING
+      },
+      birth_date: {
+        type: Sequelize.DATE
+      },
+      direction: {
+        type: Sequelize.STRING
+      },
+      email: {
+        type: Sequelize.STRING
+      },
+      phone: {
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
