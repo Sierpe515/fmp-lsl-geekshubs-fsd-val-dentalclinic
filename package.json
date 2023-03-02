@@ -1,0 +1,31 @@
+{
+  "name": "fmp-lsl-geekshubs-fsd-val-dentalclinic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sierpe515/fmp-lsl-geekshubs-fsd-val-dentalclinic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sierpe515/fmp-lsl-geekshubs-fsd-val-dentalclinic/issues"
+  },
+  "homepage": "https://github.com/Sierpe515/fmp-lsl-geekshubs-fsd-val-dentalclinic#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.1.2",
+    "nodemon": "^2.0.21",
+    "sequelize": "^6.29.0",
+    "sequelize-cli": "^6.6.0"
+  }
+}
