@@ -25,10 +25,11 @@ module.exports = {
       },
       collegiate_number: {
         type: Sequelize.STRING,
-        unique: true,
+        unique: true
       },
       schedule: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       createdAt: {
         allowNull: false,
