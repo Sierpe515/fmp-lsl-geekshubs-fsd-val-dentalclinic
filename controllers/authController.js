@@ -1,4 +1,4 @@
-const { User, Role } = require('../models');
+const { User, Role, User_Role } = require('../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -18,6 +18,11 @@ authController.register = async(req, res) => {
         }
 
         const user = await User.create(newUser)
+
+        await User_Role.create({
+            user_id: user.id,
+            role_id: 3
+        })
 
         return res.json(user)
     } catch (error) {
