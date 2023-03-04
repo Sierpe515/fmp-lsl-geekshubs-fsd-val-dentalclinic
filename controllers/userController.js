@@ -29,7 +29,13 @@ userController.getAppointment = async(req, res) => {
                 }
             }
         )
-        return res.json(userAppointment)
+        return res.json(
+            {
+                success: true,
+                message: "Access appointments successfully",
+                userAppointment: userAppointment
+            }
+        )
     } catch (error) { 
         return res.status(500).json(
             {
@@ -68,7 +74,13 @@ userController.getAppointmentAdmin = async(req, res) => {
         // if (!userAppointment) {
         //     return res.send('Wrong Credentials')
         // }
-        return res.json(userAppointment)
+        return res.json(
+            {
+                success: true,
+                message: "Access appointments successfully",
+                userAppointment: userAppointment
+            }
+        )
     } catch (error) {
         return res.status(500).json(
             {
@@ -107,7 +119,13 @@ userController.getAppointmentDoctor = async(req, res) => {
         // if (!userAppointment) {
         //     return res.send('Wrong Credentials')
         // }
-        return res.json(userAppointment)
+        return res.json(
+            {
+                success: true,
+                message: "Access appointments successfully",
+                userAppointment: userAppointment
+            }
+        )
     } catch (error) {
         return res.status(500).json(
             {
@@ -123,7 +141,13 @@ userController.profile = async(req, res) => {
         const userId = req.userId;
         const user = await User.findByPk(userId)
 
-        return res.json(user);
+        return res.json(
+            {
+                success: true,
+                message: "access profile successfully",
+                user: user
+            }
+        );
     } catch (error) {
         return res.status(500).json(
             {
@@ -141,7 +165,7 @@ userController.updateUser = async (req, res) => {
 
         const encryptedPassword = bcrypt.hashSync(password, 10);
 
-        const updateUSer = await User.update(
+        const updateUser = await User.update(
             {
                 name, 
                 surname, 
@@ -159,13 +183,77 @@ userController.updateUser = async (req, res) => {
             }
         );
 
-        if (!updateUSer) {
-            return res.send('User not updated')
+        if (!updateUser) {
+            return res.send({
+                success: false,
+                message: "Can't update user profile",
+                error_message: error.message
+            })
         }
 
-        return res.send('User updated')
+        return res.send({
+            success: true,
+            message: "Updated user profile successfully",
+            updateUser: updateUser
+        })
     } catch (error) {
-        return res.status(500).send(error.message)
+        return res.status(500).json(
+            {
+                success: false,
+                message: "Somenthing went wrong",
+                error_message: error.message
+            }
+        )
+    }
+}
+
+userController.findAllUsersDoctor = async (req, res) => {
+    try {
+        const user = await User.findAll(
+            {
+                attributes: {
+                    exclude: ["password"]
+                }
+            }
+        )
+
+        return res.json(
+            {
+                success: true,
+                message: "access profiles successfully",
+                user: user
+            }
+        );
+    } catch (error) {
+        return res.status(500).json(
+            {
+                success: false,
+                message: "Somenthing went wrong",
+                error_message: error.message
+            }
+        )
+    }
+}
+
+userController.findAllUsersAdmin = async (req, res) => {
+    try {
+        const user = await User.findAll()
+
+        return res.json(
+            {
+                success: true,
+                message: "access profiles successfully",
+                user: user
+            }
+        );
+    } catch (error) {
+        return res.status(500).json(
+            {
+                success: false,
+                message: "Somenthing went wrong",
+                error_message: error.message
+            }
+        )
     }
 }
 
