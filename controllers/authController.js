@@ -17,16 +17,28 @@ authController.register = async(req, res) => {
             password: encryptedPassword
         }
 
-        const user = await User.create(newUser)
+        const user = await User.create(newUser);
 
         await User_Role.create({
             user_id: user.id,
             role_id: 3
         })
 
-        return res.json(user)
+        return res.json(
+            {
+                success: true,
+                message: "Registered user successfully",
+                user: user
+            }
+        )
     } catch (error) {
-        return res.status(500).send(error.message)
+        return res.status(500).json(
+            {
+                success: false,
+                message: "Somenthing went wrong",
+                error_message: error.message
+            }
+        )
     }
 };
 
@@ -64,9 +76,21 @@ authController.login = async (req, res) => {
             { expiresIn: '2h'}
         );
 
-        return res.json(token)
+        return res.json(
+            {
+                success: true,
+                message: "Login successfully",
+                token: token
+            }
+        )
     } catch (error) {
-        return res.status(500).send(error.message)
+        return res.status(500).json(
+            {
+                success: false,
+                message: "Somenthing went wrong",
+                error_message: error.message
+            }
+        )
     }
 }
 

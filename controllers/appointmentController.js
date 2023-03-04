@@ -17,9 +17,21 @@ appointmentController.createAppointment = async(req, res) => {
 
         const appointment = await Appointment.create(newAppointment)
 
-        return res.json(appointment)
+        return res.json(
+            {
+                success: true,
+                message: "Registered appointment successfully",
+                appointment: appointment
+            }
+        )
     } catch (error) {
-        return res.status(500).send(error.message)
+        return res.status(500).json(
+            {
+                success: false,
+                message: "Somenthing went wrong",
+                error_message: error.message
+            }
+        )
     }
 };
 
@@ -37,9 +49,19 @@ appointmentController.createAppointmentAdmin = async(req, res) => {
 
         const appointment = await Appointment.create(newAppointment)
 
-        return res.json(appointment)
+        return res.json({
+            success: true,
+            message: "Registered appointment successfully",
+            appointment: appointment
+        })
     } catch (error) {
-        return res.status(500).send(error.message)
+        return res.status(500).json(
+            {
+                success: false,
+                message: "Somenthing went wrong",
+                error_message: error.message
+            }
+        )
     }
 };
 
