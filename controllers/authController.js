@@ -1,6 +1,7 @@
 const { User, Role, User_Role } = require('../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
 
 const authController = {};
 
@@ -23,6 +24,31 @@ authController.register = async(req, res) => {
             user_id: user.id,
             role_id: 3
         })
+
+        // const transporter = nodemailer.createTransport({
+        //     service: 'Gmail',
+        //     auth: {
+        //         user: 'falsedentalclinic@gmx.es',
+        //         pass: process.env.PASS_NM
+        //     }
+        // })
+
+        // const mailOptions = {
+        //     from: 'False Dental Clinic',
+        //     to: email,
+        //     subject: 'Registered successfully',
+        //     Text: 'Thank you for registering at our dental clinic. But we are sorry to inform you that it is not a real clinic. This is a database project. Greetings.'
+        // }
+
+        // transporter.sendMail(mailOptions, function(error, info){
+        //     if (error){
+        //         console.log(error);
+        //         res.send(500, error.message);
+        //     } else {
+        //         console.log("Email sent");
+        //         res.status(200).json(req.body);
+        //     }
+        // });
 
         return res.json(
             {
