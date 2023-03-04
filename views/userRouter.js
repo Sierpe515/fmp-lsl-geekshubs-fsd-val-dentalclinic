@@ -8,6 +8,6 @@ const router = require('express').Router();
 router.get('/getApp', verifyToken, userController.getAppointment);
 router.get('/getAppAdm', verifyToken, isAdmin, userController.getAppointmentAdmin);
 router.get('/getAppDoc', verifyToken, isDoctor, userController.getAppointmentDoctor);
-
-
+router.get('/profile', verifyToken, userController.profile);
+router.put('/updateProfile', verifyToken, userController.updateUser);
 module.exports = router;
