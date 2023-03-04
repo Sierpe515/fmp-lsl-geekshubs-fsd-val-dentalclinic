@@ -1,4 +1,5 @@
 const { User, Service, Appointment, Employee } = require('../models');
+const bcrypt = require('bcrypt');
 
 const userController = {};
 
@@ -115,6 +116,56 @@ userController.getAppointmentDoctor = async(req, res) => {
                 error_message: error.message
             }
         )
+    }
+}
+userController.profile = async(req, res) => {
+    try {
+        const userId = req.userId;
+        const user = await User.findByPk(userId)
+
+        return res.json(user);
+    } catch (error) {
+        return res.status(500).json(
+            {
+                success: false,
+                message: "Something went wrong",
+                error_message: error.message
+            }
+        )
+    }
+}
+userController.updateUser = async (req, res) => {
+    try {
+        const { name, surname, nif, birth_date, direction, email, phone, password } = req.body;
+        const userId = req.userId
+
+        const encryptedPassword = bcrypt.hashSync(password, 10);
+
+        const updateUSer = await User.update(
+            {
+                name, 
+                surname, 
+                nif, 
+                birth_date, 
+                direction, 
+                email, 
+                phone,
+                password: encryptedPassword
+            },
+            {
+                where: {
+                    id: userId
+                }
+            }
+        );
+
+        if (!updateUSer) {
+            return res.send('User not updated')
+        }
+
+        return res.send('User updated')
+    } catch (error) {
+        return res.status(500).send(error.message)
     }
 }
 
