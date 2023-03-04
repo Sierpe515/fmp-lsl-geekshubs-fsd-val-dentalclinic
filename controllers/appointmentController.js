@@ -89,7 +89,13 @@ appointmentController.deleteAppointmentById = async(req, res) => {
             },
         )
 
-        return res.json(deleteAppointment);
+        return res.json(
+            {
+                success: true,
+                message: "Appointment cancel successfully",
+                appointment: deleteAppointment
+            }
+        );
     } catch (error) {
         return res.status(500).json(
             {
