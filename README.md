@@ -93,7 +93,15 @@ Steps to make it work on your local computer:
 
 
 ## How do we do it
+For the app of the dental clinic we have implemented different technologies already mentioned above in "Stack" such as JavaScript, NodeJS, MySQL, etc.
+Firstable we desing our database and all relationships, in which there were a couple of modifications to simplify it as much as possible, you can see some of the sketches used:
+|![image](./img/../views/db1.jpg) |![image](./img/../views/db2.jpg)|
+|-|-|-|
 
+After this we organized ourselves in terms of requirements that we wanted to have in our app and marked all the final points of the project as seen in the following photos:
+|![image](./img/../img/../views/questions.jpg) |![image](./img/../img/../views/endpoints.jpg)|
+|-|-|-|
+During the process we had few issues, which we could mention the two most important was deletion of a patient in cascade because generate issues deleting data from related tables, and the second one get all information through intermediate tables with map.
 
 ## Project structure
 We used model view controller to structure our project. We created a basic CRUD.
@@ -134,7 +142,7 @@ The last relation that remains for us to mention is one to many (1:N), in our ca
 
 
 ## Endpoints
-This project has 16 endpoints, with JSON Web Tokens authentication system.
+This project has 18 endpoints, with JSON Web Tokens authentication system.
 
 Any user can access to:
 
@@ -206,28 +214,35 @@ Users logged like a 'patient' role can access the following endpoints:
         ```
 - Cancel appointment: 
     - CANCEL petition to see my own appointments currently in the database.
+  
             DELETE:   http://localhost:3000/cancelApp/:id
     You must indicate in the url the ID number of the appointment.
 - Cancel appointment by Admin: 
     - CANCEL petition to see my own appointments currently in the database.
+  
             DELETE:   http://localhost:3000/cancelAppAdm/:id
     You must indicate in the url the ID number of the appointment.
 - Check all appointments from User: 
     - GET a list of all appointments own user.
+  
             GET:   http://localhost:3000/getApp
 - Check all appointments by Admin: 
     - GET a list of all appointments.
+  
             GET:   http://localhost:3000/getAppAdm
    This option displays all fields related to the appointment
 - Check all appointments by Doctor: 
     - GET a list of all appointments.
+  
             GET:   http://localhost:3000/getAppAdm
     This option displays all fields of interest to the doctor related to the appointment. 
 - Check profile: 
     - GET petition to see the user´s own profile.
+  
             GET:   http://localhost:3000/profile
 - Update profile: 
     - We update profile from the logged user.
+  
             PUT:   http://localhost:3000/updateProfile
         body:
         ``` bash
@@ -245,9 +260,11 @@ Users logged like a 'patient' role can access the following endpoints:
         ```
 - Check all user profiles by Admin: 
     - GET petition to see the user´s profile, if you are logged like an Admin, showing all the information about the users.
+  
             GET:   http://localhost:3000/getProfilesAdm
 - Check all user profiles by Doctor: 
     - GET petition to see the user´s profile, if you are logged like a doctor, showing only the relevant information about the users.
+  
             GET:   http://localhost:3000/getProfilesDoctor
 </details>
 
@@ -277,9 +294,41 @@ Users logged like an 'Admin' role can access to everything and the following end
             "role_id": "1"
         }
         ```
+- Update user by Admin:
+    - Update profile from the logged Admin.
+
+            POST:   http://localhost:3000//updateProfile/:id
+        body:
+        ``` bash
+        {
+            "name":"",
+            "surname":"",
+            "nif":"",
+            "birth_date":"",
+            "direction":"",
+            "email":"",
+            "phone":"",
+            "password":""
+        }
+        ```
+- Delete user by Admin:
+    - Delete user and all info by Admin.
+
+            POST:   http://localhost:3000/deleteUser/:id
+        body:
+        ``` bash
+        {
+	        "user_id": "2",
+        }
+        ```
+        is required user_id.
 </details>
 
 ## Known bugs
+The error that we have encountered when modifying certain functions is:
+
+        Return.status.send is not a function
+the function is working correctly but is not send the specifically error code.
 
 
 ## Future functionalities
