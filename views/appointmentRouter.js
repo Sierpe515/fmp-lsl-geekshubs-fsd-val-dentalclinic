@@ -6,6 +6,7 @@ const router = require('express').Router();
 
 router.post('/app', verifyToken, appointmentController.createAppointment);
 router.post('/appAdmin', verifyToken, isAdmin, appointmentController.createAppointmentAdmin);
-router.delete('/cancelApp/:id', verifyToken, appointmentController.deleteAppointmentById)
+router.delete('/cancelApp/:id', verifyToken, appointmentController.deleteAppointmentById);
+router.delete('/cancelAppAdm/:id', verifyToken, isAdmin, appointmentController.deleteAppointmentByAdm);
 
 module.exports = router;

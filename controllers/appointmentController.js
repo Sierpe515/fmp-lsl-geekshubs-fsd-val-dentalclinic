@@ -107,5 +107,46 @@ appointmentController.deleteAppointmentById = async(req, res) => {
     }
 }
 
+appointmentController.deleteAppointmentByAdm = async(req, res) => {
+    try {
+        const appointmentId = req.params.id;
+        // const userId = req.userId;
+
+        // if (userId != Appointment.user_id){
+        //     return res.json("no puedes")
+        // }
+        
+        // const deleteAppointment = await Appointment.destroy(
+        //     // {userId: userId},
+        //     {where: {id: appointmentId}},
+        // )
+
+        const deleteAppointment = await Appointment.destroy(
+      
+            {
+                where: {
+                    id: appointmentId
+                }
+            },
+        )
+
+        return res.json(
+            {
+                success: true,
+                message: "Appointment cancel successfully",
+                appointment: deleteAppointment
+            }
+        );
+    } catch (error) {
+        return res.status(500).json(
+            {
+                success: false,
+                message: "Somenthing went wrong",
+                error_message: error.message
+            }
+        )
+    }
+}
+
 
 module.exports = appointmentController;
