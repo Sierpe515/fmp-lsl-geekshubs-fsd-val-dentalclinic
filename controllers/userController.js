@@ -305,5 +305,36 @@ userController.findAllUsersAdmin = async (req, res) => {
     }
 }
 
+userController.deleteUserByAdmin = async(req, res) => {
+    try {
+        const user = req.params.id;
+
+        const deleteUser = await User.destroy(
+      
+            {
+                where: {
+                    user: user
+                }
+            },
+        )
+
+        return res.json(
+            {
+                success: true,
+                message: "User deleted successfully",
+                appointment: deleteUser
+            }
+        );
+    } catch (error) {
+        return res.status(500).json(
+            {
+                success: false,
+                message: "Somenthing went wrong",
+                error_message: error.message
+            }
+        )
+    }
+}
+
 
 module.exports = userController;
