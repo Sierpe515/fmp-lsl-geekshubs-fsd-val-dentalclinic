@@ -160,6 +160,7 @@ userController.profile = async(req, res) => {
         )
     }
 }
+
 userController.updateUser = async (req, res) => {
     try {
         const { name, surname, nif, birth_date, direction, email, phone, password } = req.body;

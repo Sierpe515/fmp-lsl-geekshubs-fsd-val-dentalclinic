@@ -68,16 +68,6 @@ appointmentController.createAppointmentAdmin = async(req, res) => {
 appointmentController.deleteAppointmentById = async(req, res) => {
     try {
         const appointmentId = req.params.id;
-        // const userId = req.userId;
-
-        // if (userId != Appointment.user_id){
-        //     return res.json("no puedes")
-        // }
-        
-        // const deleteAppointment = await Appointment.destroy(
-        //     // {userId: userId},
-        //     {where: {id: appointmentId}},
-        // )
 
         const deleteAppointment = await Appointment.destroy(
       
@@ -110,16 +100,6 @@ appointmentController.deleteAppointmentById = async(req, res) => {
 appointmentController.deleteAppointmentByAdm = async(req, res) => {
     try {
         const appointmentId = req.params.id;
-        // const userId = req.userId;
-
-        // if (userId != Appointment.user_id){
-        //     return res.json("no puedes")
-        // }
-        
-        // const deleteAppointment = await Appointment.destroy(
-        //     // {userId: userId},
-        //     {where: {id: appointmentId}},
-        // )
 
         const deleteAppointment = await Appointment.destroy(
       
