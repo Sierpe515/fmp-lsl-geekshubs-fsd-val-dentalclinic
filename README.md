@@ -33,9 +33,63 @@ In addition, dentists must be able to register as professionals, make login and 
   
 
 ## Deploy 🚀
-
+---
 <div align="center">
     <a href="https://www.google.com"><strong>Url a producción </strong></a>
 </div>
+
+## Stack
+---
+<p>Technologies that has been used:</p>
+<div align="center">
+    <a href="https://expressjs.com/">
+        <img src= "https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB"/>
+    </a>
+    <a href="https://nextjs.org/">
+        <img src= "https://img.shields.io/badge/node.js-026E00?style=for-the-badge&logo=node.js&logoColor=white"/>
+    </a>
+    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript">
+        <img src= "https://img.shields.io/badge/javascipt-EFD81D?style=for-the-badge&logo=javascript&logoColor=black"/>
+    </a>
+    <a href="https://jwt.io/">
+        <img src= "https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens"/>
+    </a>
+    <a href="https://www.postman.com/">
+        <img src= "https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white"/>
+    </a>
+    <a href="https://www.mysql.com/">
+        <img src= "https://img.shields.io/badge/mysql-3E6E93?style=for-the-badge&logo=mysql&logoColor=white"/>
+    </a>
+    <a href="https://www.github.com/">
+        <img src= "https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=white"/>
+    </a>
+    <a href="https://git-scm.com/">
+        <img src= "https://img.shields.io/badge/git-F54D27?style=for-the-badge&logo=git&logoColor=white"/>
+    </a>
+    <a href="https://www.docker.com/">
+        <img src= "https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+    </a>
+    <a href="https://www.sequelize.org/">
+        <img src= "https://img.shields.io/badge/sequelize-3C76C3?style=for-the-badge&logo=sequelize&logoColor=white"/>
+    </a>
+</div>
+
+## Diagram DB
+---
+!['imagen-db'](./img/image.png)
+
+## Local installation
+---
+Steps to make it work on your local computer:
+1. Clone the project on your computer with git bash:
+ `$git clone 'url-repository'`
+2. Install all dependencies with the following command:
+ ` $ npm i `
+3. Connect the repository with the database with the following commands:
+ ``` $ npx sequelize-cli db:create ``` 
+ ``` $ npx sequelize-cli db:migrate ``` 
+ ``` $ npx sequelize-cli db:seed:all ```
+4. Start the server with:
+ ``` $ npm run dev ``` 
 
 
