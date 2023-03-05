@@ -109,11 +109,16 @@ The project will have the following structure:
     ```PORT = PORT```
     ```JWT_SECRET = SECRET```
 
--	Router.js
--	Views
+-	Router.js: This file manages the different paths that the application can have. A route will be created for each table in the database that we want to access, in addition to routing the authenticators.
+-	Views:
+      - appointmentRoutes.js: In this file we manage the path /appointments and the endpoints that point to that route.
+      - AuthRoutes.js: In this file we manage the /auth path and the endpoints pointing to that path.
+      - roleRoutes.js: In this file we manage the path /roles and the endpoints pointing to that path.
+      - User_roleRoutes.js: In this file we manage the path /users-roles and the endpoints that point to that route.
+      - usersRoutes.js: In this file we manage the /users path and the endpoints that point to that path.
+      
 -	Controllers: There are controllers for each of the established routes.The services that answer for them are entered into the controllers themselves in the case of routes.
-
--	.env.example
+-	.env.example: This file manages environment variables.
 
 
 ## DataBase
@@ -267,3 +272,45 @@ Users logged like an 'Admin' role can access to everything and the following end
             "role_id": "1"
         }
         ```
+</details>
+
+## Known bugs
+
+## Future functionalities
+
+## Licence
+This project is belonging to license...
+Creative Commons Legal Code.
+
+
+## Webgraphy
+To achieve the goal we have collected information from:
+- [Sequelize documentation](https://sequelize.org/docs/v6/)
+- [Repository GeeksHubs](https://github.com/GeeksHubs/FSD_VAL_01_2023_SEQUELIZE)
+- [dental clinic website-vitaldent](https://www.vitaldent.com/es/?gclid=c304c159cd09182a4974a55d1f0295ef&gclsrc=3p.ds&)
+- [dental clinic website-sanitas](https://dental.sanitas.es/pidetucitasem=sem:f-bing:m-adword:nc-clinicas_ao:kwd-clinica_dental:gkw-sanitas_generic_clinicas_dentales_ph:c-text:t-o-pros:s-p-clinicas:mc-cpca-wink&origen=Gnt&canal=sem&soporte=bing&campana=clinicas_aogrupo=sanitas_generic_cl%C3%ADnicas%20dentales_ph&ad=rsa&&msclkid=5e5a012e2da6108be1fc652afff59c58&gclid=5e5a012e2da6108be1fc652afff59c58&gclsrc=3p.ds)
+
+
+## Gratitude
+I thank my colleagues and especially to:
+
+- **Dani**  
+<a href="https://www.github.com/datata" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a> 
+
+- **Jose**
+<a href="https://github.com/JoseMarin" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a> 
+
+- **Mara**
+<a href="https://www.github.com/MaraScampini" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a> 
+
+- **David**  
+<a href="https://www.github.com/userGithub/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a>
+
+## Contact
+- Fernando Martínez Pardo
+<a href = "mailto:micorreoelectronico@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a><a href="https://www.linkedin.com/in/linkedinUser/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+</p>
+
+- Laura Sanchez Lucas
+<a href = "lausnclu@hotmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a><a href="https://www.linkedin.com/in/linkedinUser/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+</p>
