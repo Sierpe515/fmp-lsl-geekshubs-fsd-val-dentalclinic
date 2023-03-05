@@ -290,7 +290,7 @@ Users logged like an 'Admin' role can access to everything and the following end
         body:
         ``` bash
         {
-	    "user_id": "2",
+	    	"user_id": "2",
             "role_id": "1"
         }
         ```
