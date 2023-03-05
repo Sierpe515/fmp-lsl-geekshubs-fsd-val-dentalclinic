@@ -24,10 +24,10 @@
 </details>
 
 ## About this project
-<p align="center">From the product department GeeksHubs request us to create the backend corresponding to the appointment management system for a Dental Clinic.
+<p align="center">The product department GeeksHubs request us to create the backend corresponding to the appointment management system for a Dental Clinic.
 A database and a REST API will be created.
-The patient must be able to register in the application, login and access to client area. In your patient area you should be able to see a list of appointments that has to future, create appointments, modify them and cancel them.
-There will also be a user area with your personal data, which can only be see himself.
+The patient must be able to register in the application, login and access to their client area. In your patient area you should be able to see a list of appointments that has to, in the future, create appointments, modify them and cancel them.
+There will also be a user area with your personal data, which can only be seen by himself.
 In addition, dentists must be able to register as professionals, make login and view all appointments with registered customers.</p>
   
 
@@ -83,7 +83,7 @@ Steps to make it work on your local computer:
  `$git clone 'url-repository'`
 2. Install all dependencies with the following command:
  ` $ npm i `
-3. Create a .env file following the template .env.example provided and type all  credentials. If you cannot get them, change the parameters for your own local database set up run in docker.
+3. Create a .env file following the template .env.example provided and type all credentials. If you cannot get them, change the parameters for your own local database set up running in docker.
 4.  Start the server with:
  ``` $ npm run dev ```
 5. Connect the repository with the database with the following commands:
@@ -101,12 +101,12 @@ Firstable we desing our database and all relationships, in which there were a co
 After this we organized ourselves in terms of requirements that we wanted to have in our app and marked all the final points of the project as seen in the following photos:
 |![image](./img/../img/../views/questions.jpg) |![image](./img/../img/../views/endpoints.jpg)|
 |-|-|-|
-During the process we had few issues, which we could mention the two most important was deletion of a patient in cascade because generate issues deleting data from related tables, and the second one get all information through intermediate tables with map.
+During the process we had few issues, which we could mention the two most important. One was deletion of a user in cascade which generated issues deleting data from related tables, and the second one get all information through intermediate tables with map.
 
 ## Project structure
 We used model view controller to structure our project. We created a basic CRUD.
 The project will have the following structure:
--	Index.js: This is the main file. From this file we call to routes file, express and middleware that will have all the routes are called and the server is started.
+-	Index.js: This is the main file. From this file we call to routes file, express and middleware that will have all the routes called and the server is started.
 -	Config.
       - Config.json: This file manages the configuration to connect to the database. It is created automatically with sequelize.
 -	Middlewares: This file manages common services, such as authentication through use of tokens to access API restricted zones.
@@ -125,7 +125,7 @@ The project will have the following structure:
       - User_roleRoutes.js: In this file we manage the path /users-roles and the endpoints that point to that route.
       - usersRoutes.js: In this file we manage the /users path and the endpoints that point to that path.
       
--	Controllers: There are controllers for each of the established routes.The services that answer for them are entered into the controllers themselves in the case of routes.
+-	Controllers: There are controllers for each of the established routes. The services that answer for them are entered into the controllers themselves through the routes.
 -	.env.example: This file manages environment variables.
 
 
@@ -199,7 +199,7 @@ Users logged like a 'patient' role can access the following endpoints:
     Only appointments can be created for the logged in user.
 
 - Create appointment by Admin: 
-    - Create appointment by the admin for the someone user through postman with POST option.
+    - Create appointment by the admin for any user through postman with POST option.
 
             POST:   http://localhost:3000/appAdmin
         body:
@@ -213,17 +213,17 @@ Users logged like a 'patient' role can access the following endpoints:
         }
         ```
 - Cancel appointment: 
-    - CANCEL petition to see my own appointments currently in the database.
+    - CANCEL petition to delete my own appointments currently in the database.
   
             DELETE:   http://localhost:3000/cancelApp/:id
     You must indicate in the url the ID number of the appointment.
 - Cancel appointment by Admin: 
-    - CANCEL petition to see my own appointments currently in the database.
+    - CANCEL petition to delete any user appointments currently in the database.
   
             DELETE:   http://localhost:3000/cancelAppAdm/:id
     You must indicate in the url the ID number of the appointment.
 - Check all appointments from User: 
-    - GET a list of all appointments own user.
+    - GET a list of all users' appointments.
   
             GET:   http://localhost:3000/getApp
 - Check all appointments by Admin: 
@@ -259,11 +259,11 @@ Users logged like a 'patient' role can access the following endpoints:
 
         ```
 - Check all user profiles by Admin: 
-    - GET petition to see the user´s profile, if you are logged like an Admin, showing all the information about the users.
+    - GET petition to see the user´s profile, if you are logged like an Admin, will show all the information about the users.
   
             GET:   http://localhost:3000/getProfilesAdm
 - Check all user profiles by Doctor: 
-    - GET petition to see the user´s profile, if you are logged like a doctor, showing only the relevant information about the users.
+    - GET petition to see the user´s profile, if you are logged like a doctor, will show only the relevant information about the users.
   
             GET:   http://localhost:3000/getProfilesDoctor
 </details>
@@ -290,7 +290,7 @@ Users logged like an 'Admin' role can access to everything and the following end
         body:
         ``` bash
         {
-	        "user_id": "2",
+	    "user_id": "2",
             "role_id": "1"
         }
         ```
@@ -328,20 +328,19 @@ Users logged like an 'Admin' role can access to everything and the following end
 The error that we have encountered when modifying certain functions is:
 
         Return.status.send is not a function
-the function is working correctly but is not send the specifically error code.
+the function is working correctly but is not sending the specifically error code.
 
 
 ## Future functionalities
 
-Below we mention a functionalities that remain to be implemented in this project:
-   - Will be connected it to a frontend.
-   - We would like to introduce a feedback model to give the customer the option to write a review and reach more customers.
-   - To be able to make an appointment with a doctor and that date and time is blocked for exactly that doctor, so it will be unique.
+Below we mention a few functionalities that remain to be implemented in this project:
+   - It will be connected to a frontend.
+   - We would like to introduce a feedback model to give the customer the option to write a review which will reach more customers.
+   - To be able to make an appointment with a doctor and that date and time be blocked for exactly that doctor, so it will be unique.
     
 
 ## Licence
-This project is belonging to license...
-Creative Commons Legal Code.
+This project is belonging to license Creative Commons Legal Code.
 
 
 ## Webgraphy
@@ -369,7 +368,7 @@ I thank my colleagues and especially to:
 
 ## Contact
 - Fernando Martínez Pardo
-<a href = "mailto:micorreoelectronico@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a><a href="https://www.linkedin.com/in/linkedinUser/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+<a href = "sierpe515@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a><a href="https://www.linkedin.com/in/linkedinUser/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 </p>
 
 - Laura Sanchez Lucas
