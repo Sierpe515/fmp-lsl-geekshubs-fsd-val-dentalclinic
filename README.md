@@ -124,9 +124,14 @@ The project will have the following structure:
 ## DataBase
 
 This project required a functional API connected to a database with different relationships.
-			DIAGRAMA DE BASE DE DATOS.
-The database has 7 tables: Role and Users…..
-			Need to be complete.
+The database has 7 models: role, user_role, user, service, appointment, employee and specialty.
+Our database is based on two types of relationships.
+From many to many (N:N), in our case many users can have many services and this is controlled through the intermediate appointment model.
+We can also observe that we have more N:N relationships like users and roles, in which user can have different roles and a role can be had by many users or even between the models user and appointment.
+The last relation that remains for us to mention is one to many (1:N), in our case it is between employees and specialties model, we decided that in our clinic an employee has only one specialty.
+
+
+
 
 ## Endpoints
 This project has 16 endpoints, with JSON Web Tokens authentication system.
@@ -276,7 +281,14 @@ Users logged like an 'Admin' role can access to everything and the following end
 
 ## Known bugs
 
+
 ## Future functionalities
+
+Below we mention a functionalities that remain to be implemented in this project:
+   - Will be connected it to a frontend.
+   - We would like to introduce a feedback model to give the customer the option to write a review and reach more customers.
+   - To be able to make an appointment with a doctor and that date and time is blocked for exactly that doctor, so it will be unique.
+    
 
 ## Licence
 This project is belonging to license...
