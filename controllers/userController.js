@@ -313,7 +313,7 @@ userController.deleteUserByAdmin = async(req, res) => {
       
             {
                 where: {
-                    user: user
+                    id: user
                 }
             },
         )
