@@ -95,11 +95,13 @@ Steps to make it work on your local computer:
 ## How do we do it
 For the app of the dental clinic we have implemented different technologies already mentioned above in "Stack" such as JavaScript, NodeJS, MySQL, etc.
 Firstable we desing our database and all relationships, in which there were a couple of modifications to simplify it as much as possible, you can see some of the sketches used:
-|![image](./img/../views/db1.jpg) |![image](./img/../views/db2.jpg)|
+
+![image](./img/db1.jpg) |![image](./img/db2.jpg)|
 |-|-|-|
 
 After this we organized ourselves in terms of requirements that we wanted to have in our app and marked all the final points of the project as seen in the following photos:
-|![image](./img/../img/../views/questions.jpg) |![image](./img/../img/../views/endpoints.jpg)|
+
+|![image](./img/questions.jpg) |![image](./img/endpoints.jpg)|
 |-|-|-|
 During the process we had few issues, which we could mention the two most important. One was deletion of a user in cascade which generated issues deleting data from related tables, and the second one get all information through intermediate tables with map.
 
