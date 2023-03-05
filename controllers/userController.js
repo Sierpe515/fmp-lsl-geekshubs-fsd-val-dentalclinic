@@ -53,10 +53,13 @@ userController.getAppointmentAdmin = async(req, res) => {
             {
                 include: [
                     {
-                        model: Employee,
+                        model: User,
                         attributes: {
-                            exclude: ["id", "user_id", "nif", "birth_date", "direction", "collegiate_number", "schedule", "createdAt", "updatedAt"]
-                        },
+                            exclude: ["id", "user_id", "nif", "birth_date", "direction", "createdAt", "updatedAt"]
+                        } 
+                    },
+                    {
+                        model: Employee,
                         include: {
                             model: User,
                             attributes: {
@@ -71,9 +74,7 @@ userController.getAppointmentAdmin = async(req, res) => {
             }
             
         )
-        // if (!userAppointment) {
-        //     return res.send('Wrong Credentials')
-        // }
+    
         return res.json(
             {
                 success: true,
@@ -98,10 +99,13 @@ userController.getAppointmentDoctor = async(req, res) => {
             {
                 include: [
                     {
-                        model: Employee,
+                        model: User,
                         attributes: {
-                            exclude: ["id", "user_id", "nif", "birth_date", "direction", "collegiate_number", "schedule", "createdAt", "updatedAt"]
-                        },
+                            exclude: ["id", "user_id", "nif", "birth_date", "direction", "password", "createdAt", "updatedAt"]
+                        } 
+                    },
+                    {
+                        model: Employee,
                         include: {
                             model: User,
                             attributes: {
