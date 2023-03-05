@@ -10,6 +10,7 @@ router.get('/getAppAdm', verifyToken, isAdmin, userController.getAppointmentAdmi
 router.get('/getAppDoc', verifyToken, isDoctor, userController.getAppointmentDoctor);
 router.get('/profile', verifyToken, userController.profile);
 router.put('/updateProfile', verifyToken, userController.updateUser);
+router.put('/updateProfile/:id', verifyToken, isAdmin, userController.updateUserByAdmin);
 router.get('/getProfilesDoc', verifyToken, isDoctor, userController.findAllUsersDoctor);
 router.get('/getProfilesAdm', verifyToken, isAdmin, userController.findAllUsersAdmin);
 module.exports = router;

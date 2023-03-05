@@ -210,6 +210,51 @@ userController.updateUser = async (req, res) => {
     }
 }
 
+userController.updateUserByAdmin = async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const { name, surname, nif, birth_date, direction, email, phone, password } = req.body;
+        const encryptedPassword = bcrypt.hashSync(password, 10);
+        const updateUser = await User.update(
+            {
+                name,
+                surname,
+                nif,
+                birth_date,
+                direction,
+                email,
+                phone,
+                password: encryptedPassword
+            },
+            {
+                where: {
+                    id: userId
+                }
+            }
+        );
+        if (!updateUser) {
+            return res.send({
+                success: false,
+                message: "Can't update user profile",
+                error_message: error.message
+            })
+        }
+        return res.send({
+            success: true,
+            message: "Updated user profile successfully",
+            updateUser: updateUser
+        })
+    } catch (error) {
+        return res.status(500).json(
+            {
+                success: false,
+                message: "Somenthing went wrong",
+                error_message: error.message
+            }
+        )
+    }
+}
+
 userController.findAllUsersDoctor = async (req, res) => {
     try {
         const user = await User.findAll(
