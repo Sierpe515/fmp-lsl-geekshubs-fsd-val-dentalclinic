@@ -19,13 +19,13 @@ userController.getAppointment = async(req, res) => {
                         include: {
                             model: User,
                             attributes: {
-                                exclude: ["id", "nif", "birth_date", "direction","password", "role_id", "createdAt", "updatedAt"]
+                                exclude: ["id", "nif", "birth_date", "direction", "password", "role_id", "createdAt", "updatedAt"]
                             },
                         }
                     },
                 ],
                 attributes: {
-                    exclude: ["id", "employee_id", "user_id", "doctor_id", "service_id"]
+                    exclude: ["id", "employee_id", "user_id", "service_id"]
                 }
             }
         )
@@ -63,13 +63,13 @@ userController.getAppointmentAdmin = async(req, res) => {
                         include: {
                             model: User,
                             attributes: {
-                                exclude: ["id", "nif", "birth_date", "direction","password", "role_id", "createdAt", "updatedAt"]
+                                exclude: ["id", "nif", "birth_date", "direction", "password", "role_id", "createdAt", "updatedAt"]
                             },
                         }
                     },
                 ],
                 attributes: {
-                    exclude: ["id", "employee_id", "user_id", "doctor_id", "service_id"]
+                    exclude: ["id", "employee_id", "user_id", "service_id"]
                 }
             }
             
@@ -109,20 +109,18 @@ userController.getAppointmentDoctor = async(req, res) => {
                         include: {
                             model: User,
                             attributes: {
-                                exclude: ["id", "nif", "birth_date", "direction","password", "role_id", "createdAt", "updatedAt"]
+                                exclude: ["id", "nif", "birth_date", "direction", "password", "role_id", "createdAt", "updatedAt"]
                             },
                         }
                     },
                 ],
                 attributes: {
-                    exclude: ["id", "employee_id", "user_id", "doctor_id", "service_id"]
+                    exclude: ["id", "employee_id", "user_id", "service_id"]
                 }
             }
             
         )
-        // if (!userAppointment) {
-        //     return res.send('Wrong Credentials')
-        // }
+        
         return res.json(
             {
                 success: true,
