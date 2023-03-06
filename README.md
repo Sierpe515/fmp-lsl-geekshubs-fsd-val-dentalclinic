@@ -31,12 +31,6 @@ There will also be a user area with your personal data, which can only be seen b
 In addition, dentists must be able to register as professionals, make login and view all appointments with registered customers.</p>
   
 
-## Deploy 🚀
-
-<div align="center">
-    <a href="https://www.google.com"><strong>Url at production </strong></a>
-</div>
-
 ## Stack
 <p>Technologies that has been used:</p>
 <div align="center">
@@ -90,6 +84,9 @@ Steps to make it work on your local computer:
  ``` $ npx sequelize-cli db:create ``` 
  ``` $ npx sequelize-cli db:migrate ``` 
  ``` $ npx sequelize-cli db:seed:all ```
+
+6. Import this file in postman to get the endpoints we have created:
+`[BD DENTAL CLINIC.postman_collection.zip](https://github.com/Sierpe515/fmp-lsl-geekshubs-fsd-val-dentalclinic/files/10897861/BD.DENTAL.CLINIC.postman_collection.zip)`
 
 
 ## How do we do it
@@ -366,13 +363,13 @@ I thank my colleagues and especially to:
 <a href="https://www.github.com/MaraScampini" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a> 
 
 - **David**  
-<a href="https://www.github.com/userGithub/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a>
+<a href="https://github.com/Dave86dev" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a>
 
 ## Contact
 - Fernando Martínez Pardo
-<a href = "sierpe515@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a><a href="https://www.linkedin.com/in/linkedinUser/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+<a href = "sierpe515@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a><a href="https://www.linkedin.com/in/fernando-mart%C3%ADnez-pardo-61456712a/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a><a href="https://github.com/Sierpe515" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a> 
 </p>
 
 - Laura Sanchez Lucas
-<a href = "lausnclu@hotmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a><a href="https://www.linkedin.com/in/linkedinUser/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+<a href = "lausnclu@hotmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a><a href="https://www.linkedin.com/in/linkedinUser/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a><a href="https://github.com/LauraSanchezLucas" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a> 
 </p>
