@@ -86,7 +86,7 @@ Steps to make it work on your local computer:
  ``` $ npx sequelize-cli db:seed:all ```
 
 6. Import this file in postman to get the endpoints we have created:
-`[BD DENTAL CLINIC.postman_collection.zip](https://github.com/Sierpe515/fmp-lsl-geekshubs-fsd-val-dentalclinic/files/10897861/BD.DENTAL.CLINIC.postman_collection.zip)`
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/26229497-73bc7768-cb38-47f0-8784-b78a3e18a39a?action=collection%2Ffork&collection-url=entityId%3D26229497-73bc7768-cb38-47f0-8784-b78a3e18a39a%26entityType%3Dcollection%26workspaceId%3Da4a7fa1f-bae1-41b0-8f54-556776de2238)
 
 
 ## How do we do it
